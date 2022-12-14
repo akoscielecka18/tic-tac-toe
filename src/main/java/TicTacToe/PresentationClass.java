@@ -42,7 +42,7 @@ public class PresentationClass {
                 break;
 
             } catch (Exception e) {
-                System.out.println("Wrong number");
+                System.out.println("Wrong number1");
                 continue;
             }
     }
