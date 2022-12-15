@@ -77,7 +77,7 @@ public class WinDefeatTie {
     }
 
     static BoardClass boardClass = new BoardClass();
-    static boolean isGameFinished(char[][] board){
+    public boolean isGameFinished(char[][] board){
 
 
         if(boardClass.isGameOver(board, 'O')){

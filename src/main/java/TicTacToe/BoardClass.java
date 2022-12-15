@@ -1,7 +1,7 @@
 package TicTacToe;
 
 public class BoardClass {
-    static  boolean isGameOver(char[][] board, char symbol) {
+    public boolean isGameOver(char[][] board, char symbol) {
 
         if ((board[0][0] == symbol) && (board[0][1] == symbol) && (board[0][2] == symbol) ||
                 (board[1][0] == symbol) && (board[1][1] == symbol) && (board[1][2] == symbol) ||
