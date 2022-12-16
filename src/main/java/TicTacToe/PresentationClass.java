@@ -1,23 +1,27 @@
 package TicTacToe;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PresentationClass {
-    public static void main(String[] args){
 
+    public static void main(String[] args){
+        ArrayList<Integer> playerPositions = new ArrayList<Integer>();
         char[][] board = new char[3][3];
-        WinDefeatTie winDefeatTie = new WinDefeatTie();
+        BoardClass boardClass = new BoardClass();
         System.out.println("Welcome in the game! \nIn which box do you want to start (1-9)?");
         while(true){
             firstPlayerTurn(board);
-            if(winDefeatTie.isGameFinished(board)){
+
+            if(boardClass.isGameOver()){
                 break;
             }
             secondPlayerTurn(board);
-            if(winDefeatTie.isGameFinished(board)){
+            if(boardClass.isGameOver()){
                 break;
             }
+            }
         }
-    }
+
     static void printBoard(char[][] board) {
         int dim = board.length;
 
@@ -31,6 +35,7 @@ public class PresentationClass {
     }
 
     static void firstPlayerTurn(char[][] board) {
+        ArrayList<Integer> playerPositions = new ArrayList<Integer>();
         WinDefeatTie winDefeatTie = new WinDefeatTie();
         Scanner scanner = new Scanner(System.in);
         String s;
@@ -40,14 +45,14 @@ public class PresentationClass {
                 int box = Integer.parseInt(s);
                 winDefeatTie.nextMove(board, box, "first");
                 break;
-
             } catch (Exception e) {
-                System.out.println("Wrong number1");
+                System.out.println("Wrong number");
                 continue;
             }
     }
 
     static void secondPlayerTurn(char[][] board) {
+        ArrayList<Integer> playerPositions = new ArrayList<Integer>();
         WinDefeatTie winDefeatTie = new WinDefeatTie();
         Scanner scanner = new Scanner(System.in);
         String a;
